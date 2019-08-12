@@ -1,0 +1,4 @@
+C:\Users\Braedyn Au\Desktop\Yolo-Annotation-Tool-New-/Images/rings//new_Superres-1_CROPPED-1.tif16.jpg
+C:\Users\Braedyn Au\Desktop\Yolo-Annotation-Tool-New-/Images/rings//new_Superres-1_CROPPED-1.tif5.jpg
+C:\Users\Braedyn Au\Desktop\Yolo-Annotation-Tool-New-/Images/rings//new_Superres-2_CROPPED.tif5.jpg
+C:\Users\Braedyn Au\Desktop\Yolo-Annotation-Tool-New-/Images/rings//new_Superres-3_CROPPED.tif4.jpg

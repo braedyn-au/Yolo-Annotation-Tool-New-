@@ -7,8 +7,8 @@
 #
 #-------------------------------------------------------------------------------
 from __future__ import division
-from Tkinter import *
-import tkMessageBox
+from tkinter import *
+from tkinter import messagebox
 from PIL import Image, ImageTk
 import os
 import sys
@@ -150,17 +150,17 @@ class LabelTool():
                 self.parent.focus()
                 self.category = s
             except ValueError as ve:
-                tkMessageBox.showerror("Error!", message = "The folder should be numbers")
+                messagebox.showerror("Error!", message = "The folder should be numbers")
                 return
         if not os.path.isdir('./Images/%s' % self.category):
-           tkMessageBox.showerror("Error!", message = "The specified dir doesn't exist!")
+           messagebox.showerror("Error!", message = "The specified dir doesn't exist!")
            return
         # get image list
         self.imageDir = os.path.join(r'./Images', '%s' %(self.category))
         self.imageList = glob.glob(os.path.join(self.imageDir, '*.jpg'))
         if len(self.imageList) == 0:
-            print 'No .jpg images found in the specified dir!'
-            tkMessageBox.showerror("Error!", message = "No .jpg images found in the specified dir!")
+            print('No .jpg images found in the specified dir!')
+            messagebox.showerror("Error!", message = "No .jpg images found in the specified dir!")
             return
 
         # default to the 1st image in the collection
@@ -174,7 +174,7 @@ class LabelTool():
         if not os.path.exists(self.outDir):
             os.mkdir(self.outDir)
         self.loadImage()
-        print '%d images loaded from %s' %(self.total, s)
+        print('%d images loaded from %s' %(self.total, s))
 
     def loadImage(self):
         # load image
@@ -215,7 +215,7 @@ class LabelTool():
                 b = (float(xmin), float(xmax), float(ymin), float(ymax))
                 bb = self.convert((self.curimg_w,self.curimg_h), b)
                 f.write(str(bboxcls) + " " + " ".join([str(a) for a in bb]) + '\n')
-        print 'Image No. %d saved' %(self.cur)
+        print('Image No. %d saved' %(self.cur))
 
 
     def mouseClick(self, event):
@@ -282,7 +282,7 @@ class LabelTool():
             self.cur -= 1
             self.loadImage()
         else:
-            tkMessageBox.showerror("Information!", message = "This is first image")
+            messagebox.showerror("Information!", message = "This is first image")
 
     def nextImage(self, event = None):
         self.saveImage()
@@ -290,7 +290,7 @@ class LabelTool():
             self.cur += 1
             self.loadImage()
         else:
-            tkMessageBox.showerror("Information!", message = "All images annotated")
+            messagebox.showerror("Information!", message = "All images annotated")
 
     def gotoImage(self):
         idx = int(self.idxEntry.get())
